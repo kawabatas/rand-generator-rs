@@ -7,11 +7,11 @@ const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
 pub fn generate_rand_string(len: u16) -> String {
     let mut rng = rand::thread_rng();
     let generated: String = (0..len)
-    .map(|_| {
-        let idx = rng.gen_range(0..CHARSET.len());
-        CHARSET[idx] as char
-    })
-    .collect();
+        .map(|_| {
+            let idx = rng.gen_range(0..CHARSET.len());
+            CHARSET[idx] as char
+        })
+        .collect();
 
     generated
 }
